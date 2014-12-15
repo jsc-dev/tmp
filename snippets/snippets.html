@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>helloworld</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <!-- Bootstrap -->
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Font Awesome Icons -->
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        
+        <link href="owl.carousel.css" rel="stylesheet">
+        <link href="owl.transitions.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    </head>
+    <body id="top">
+
+    <div class="container">
+
+        <h2>simple modal</h2>
+        <div class="row ">
+            <div class="col-md-6 col-sm-6">
+                <div class="">
+                    <style>
+                    .modal-body {
+                        max-height: 400px;
+                        overflow-y: auto;
+                        padding: 15px;
+                        position: relative;
+                    }                    
+                    </style>
+                    <a data-target="#myModal1" data-toggle="modal" href="#">Modal1</a>
+
+                    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModal1Label" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Modal1</h4>
+                          </div>
+                          <div class="modal-body">
+                            <!-- content-->
+                            hello world<br>
+                            hello world<br>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    
+
+        <div class="row ">
+            <div class="col-md-12 col-sm-12">
+                
+                <div class="row">
+                    <div class="col-xs-8">
+                        <h3 class="">owl slider band</h3>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="owl-brand-customNav">
+                            <a class="btn btn-default prev"><i class="fa fa-chevron-left"></i></a>
+                            <a class="btn btn-default next"><i class="fa fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="owl-brand" class="owl-carousel">
+                            <!--loop-->
+                            <div class="item">
+                                <img class="lazyOwl" data-src="http://placehold.it/300x300" alt="test">
+                            </div>
+                            <div class="item">
+                                <img class="lazyOwl" data-src="http://placehold.it/300x300" alt="test">
+                            </div>
+                            <div class="item">
+                                <img class="lazyOwl" data-src="http://placehold.it/300x300" alt="test">
+                            </div>
+                            <div class="item">
+                                <img class="lazyOwl" data-src="http://placehold.it/300x300" alt="test">
+                            </div>
+                            <div class="item">
+                                <img class="lazyOwl" data-src="http://placehold.it/300x300" alt="test">
+                            </div>
+                            <div class="item">
+                                <img class="lazyOwl" data-src="http://placehold.it/300x300" alt="test">
+                            </div>
+                            <!--loop-->
+                        </div>
+                    </div>
+                </div>                    
+
+                <style>
+                /* owl */
+                .owl-brand-customNav { margin-top: 20px; text-align: right;}
+                .owl-brand-customNav a { 
+                  /*use styles below to disable ugly selection*/
+                  -webkit-user-select: none;
+                  -khtml-user-select: none;
+                  -moz-user-select: none;
+                  -ms-user-select: none;
+                  user-select: none;
+                  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                }
+                #owl-one .item img{
+                  display: block;
+                  width: 100%;
+                  height: auto;
+                }      
+                </style>
+
+                <script>
+                $(function() {
+                    //owl brand slider
+                    var owlbrand = $("#owl-brand");
+                    owlbrand.owlCarousel({
+                        //autoPlay: 3000, //Set AutoPlay to 2 seconds
+                        itemsCustom: [ [320, 1], [360, 1], [480, 1], [640, 2], [768, 3], [980, 3], [1170, 3] ],
+                        slideSpeed: 500,
+                        addClassActive: true,
+                        pagination: false,
+                        lazyLoad : true,
+                        navigation : false
+                    }); 
+                    // owl brand slider Custom Navigation Events
+                    $(".next").click(function(){
+                        owlbrand.trigger('owl.next');
+                    });
+                    $(".prev").click(function(){
+                        owlbrand.trigger('owl.prev');
+                    });
+
+                    //owl header slider
+                    var owlone = $("#owl-one");
+                    owlone.owlCarousel({
+                        navigation : true, // Show next and prev buttons
+                        slideSpeed : 300,
+                        paginationSpeed : 400,
+                        singleItem:true,
+                        transitionStyle : "fade"
+                    });
+                });
+                </script>
+            </div>
+        </div>
+    
+
+        <div class="row ">
+            <div class="col-md-12 col-sm-12">
+                
+                <div class="row">
+                    <div class="col-xs-8">
+                        <h3 class="" id="test2">modal - load content</h3>
+                    </div>
+                </div>
+
+                <a class="btn offer_modal" href="#myModalOffer" role="button" data-toggle="modal">klick</a>
+                
+                <!-- Modal -->
+                <div id="myModalOffer" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal2label" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="modal2label">Headline</h4>
+                      </div>
+                      <div class="modal-body">
+                        <span id='ajax_loader_modal' style='display:none'><!--<img src='loader.gif'/>--> laden...</span>
+                        <div class="body_content"></div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                    </div>
+                </div>
+                <!-- //Modal -->                
+                <script type="text/javascript">
+                //<![CDATA[
+                  $(document).ready(function(){
+                    $(".offer_modal").click(function() {
+                        $('#modal2label').html($('#test2').html());
+                        $('.body_content').html("test 123");
+                    });
+                  });
+                //]]>
+                </script>
+            </div>
+        </div>
+    
+
+
+                <script type="text/javascript">
+                  $(document).ready(function(){
+                        jQuery(".modal_btn").click(function(){
+                            jQuery('#ajax_loader_modal').show();
+                            var f= jQuery('form').serializeObject();
+                            jQuery.post("/test/ajax.php", f,
+                                function(data){
+                                    jQuery('#ajax_loader_modal').hide();
+                                    jQuery('.body_content').html(data);
+                            });
+                        });                    
+                  });
+                </script>   
+
+                <script type="text/javascript">
+                /*
+                    http://code.tutsplus.com/articles/build-an-ajax-powered-shopping-cart--net-486
+                    https://www.tutorials.de/threads/jquery-warenkorb-update-mit-mehreren-eintraegen.373080/
+                    http://openbook.galileo-press.de/javascript/javascript08.htm#Xxx55048
+                    http://dzineblog.com/2010/10/10-amazing-collections-of-ajax-shopping-cart.html
+                    http://www.smashingmagazine.com/2014/02/13/create-client-side-shopping-cart/
+                    https://github.com/gabrieleromanato/jQuery-sessionStorage-shopping-cart
+                */
+                </script>    
+
+
+    </div>
+
+
+    <!-- jQuery Plugins -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script> 
+    <script src="owl.carousel.js"></script> 
+        
+  </body>
+</html>
